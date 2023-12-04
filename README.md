@@ -326,7 +326,7 @@ models['Random Forest'] = RandomForestClassifier()
 models['Gradient Boost'] = GradientBoostingClassifier()
 ```
 
-## Test Model
+## Model Test
 
 
 <div>
