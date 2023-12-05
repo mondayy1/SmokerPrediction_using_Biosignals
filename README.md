@@ -1,6 +1,11 @@
 # SmokerPrediction_using_Biosignals
 Let's create a model that predicts smoking using bio-signals.
 
+## Usage
+```bash
+$ python src/Run.py
+```
+
 ## Datasets
 https://www.kaggle.com/datasets/gauravduttakiit/smoker-status-prediction-using-biosignals/data
 
@@ -382,5 +387,18 @@ models['Gradient Boost'] = GradientBoostingClassifier()
 Random Forest shows best F1-Score and Auc.
 
 
-## TODO: GridSearch with Optuna
-
+## Model Tuning with Optuna
+```python
+import optuna
+def objective(trial):
+    n_estimators = trial.suggest_int('n_estimators', 1, 200)
+    max_depth = trial.suggest_int('max_depth', 2, 32, log=True)
+    min_samples_split = trial.suggest_int('min_samples_split', 2, 10)
+    min_samples_leaf = trial.suggest_int('min_samples_leaf', 1, 5)
+    ...
+    return accuracy_score(y_test, y_pred)
+study = optuna.create_study(direction='maximize')
+study.optimize(objective, n_trials=100)
+```
+Best Hyperparameters: {'n_estimators': 163, 'max_depth': 20, 'min_samples_split': 3, 'min_samples_leaf': 1}
+> Accuracy with Best Model: 0.8008208285237912
