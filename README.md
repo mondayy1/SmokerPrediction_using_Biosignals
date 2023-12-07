@@ -9,7 +9,7 @@ $ python src/Run.py
 ## Datasets
 https://www.kaggle.com/datasets/gauravduttakiit/smoker-status-prediction-using-biosignals/data
 
-## Dataset Overview
+## Data
 <div>
 <table border="1" class="dataframe">
   <thead>
