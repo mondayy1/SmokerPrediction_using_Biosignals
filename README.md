@@ -311,12 +311,12 @@ https://www.kaggle.com/datasets/gauravduttakiit/smoker-status-prediction-using-b
 ## EDA
 ![image](https://github.com/mondayy1/SmokerPrediction/assets/128250130/d9a14a4b-68ca-440e-9400-697d03b53b84)</br>
 According to the Plot, height and weight are regarded as important feature.
-So I added 'BMI' as a new feature, but it didnt helped.
+Add 'BMI' as a new feature, but it didnt helped.
 
 ![image](https://github.com/mondayy1/SmokerPrediction/assets/128250130/fcda0f6a-8459-42cc-aad9-14a91750b1ad)</br>
 
 Categorical features don't help our model at all according to the plot.
-So I dropped all these features(Hearing, Urine Protine...)
+Drop all these features(Hearing, Urine Protine...)
 
 Scaler with MinMax/Standard didnt help our model according to the test.
 
@@ -401,4 +401,4 @@ study = optuna.create_study(direction='maximize')
 study.optimize(objective, n_trials=100)
 ```
 Best Hyperparameters: {'n_estimators': 163, 'max_depth': 20, 'min_samples_split': 3, 'min_samples_leaf': 1}
-> Accuracy with Best Model: 0.8008208285237912
+> Auc with Best Model: 0.8008208285237912
